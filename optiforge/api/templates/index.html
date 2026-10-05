@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiForge - Mathematical Optimization Solver</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>OptiForge</h1>
+            <p class="subtitle">Mathematical Optimization Solver</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="panel input-panel">
+            <h2>Problem Configuration</h2>
+            
+            <div class="form-group">
+                <label for="objective-sense">Objective</label>
+                <select id="objective-sense" class="select-input">
+                    <option value="minimize">Minimize</option>
+                    <option value="maximize">Maximize</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Variables</label>
+                <div id="variables-container">
+                    <div class="variable-row">
+                        <input type="text" class="var-name" placeholder="Name (e.g., x1)" value="x1">
+                        <input type="number" class="var-coeff" placeholder="Obj. Coeff." step="any" value="1">
+                        <select class="var-type">
+                            <option value="continuous">Continuous</option>
+                            <option value="integer">Integer</option>
+                            <option value="binary">Binary</option>
+                        </select>
+                        <input type="number" class="var-lb" placeholder="Lower Bound" step="any" value="0">
+                        <input type="number" class="var-ub" placeholder="Upper Bound" step="any">
+                        <button type="button" class="btn btn-danger btn-sm remove-var" title="Remove variable">×</button>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="add-variable">+ Add Variable</button>
+            </div>
+
+            <div class="form-group">
+                <label>Constraints</label>
+                <div id="constraints-container">
+                    <!-- Constraints added dynamically -->
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="add-constraint">+ Add Constraint</button>
+            </div>
+
+            <div class="actions">
+                <button type="button" class="btn btn-primary" id="solve-btn">
+                    <span class="btn-text">Solve</span>
+                    <span class="btn-loading" style="display: none;">Solving...</span>
+                </button>
+                <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
+            </div>
+        </section>
+
+        <section class="panel results-panel">
+            <h2>Results</h2>
+            
+            <div id="results-content">
+                <div class="empty-state">
+                    <p>Enter a problem and click Solve to see results.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>OptiForge v0.1.0 — From-scratch LP/MILP Solver</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "config": "A_DenseLU",
+    "workload": "small_dense_lp",
+    "peak_traced_bytes": 18121,
+    "current_traced_bytes": 3848
+  },
+  {
+    "config": "C_PFI",
+    "workload": "small_dense_lp",
+    "peak_traced_bytes": 14535,
+    "current_traced_bytes": 4000
+  },
+  {
+    "config": "A_DenseLU",
+    "workload": "medium_dense_lp",
+    "peak_traced_bytes": 119515,
+    "current_traced_bytes": 10096
+  },
+  {
+    "config": "C_PFI",
+    "workload": "medium_dense_lp",
+    "peak_traced_bytes": 126471,
+    "current_traced_bytes": 10712
+  },
+  {
+    "config": "A_DenseLU",
+    "workload": "large_dense_lp",
+    "peak_traced_bytes": 976632,
+    "current_traced_bytes": 17192
+  },
+  {
+    "config": "C_PFI",
+    "workload": "large_dense_lp",
+    "peak_traced_bytes": 927997,
+    "current_traced_bytes": 17632
+  }
+]

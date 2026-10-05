@@ -1,0 +1,168 @@
+"""OptiForge numerical core package.
+
+Provides dense LU factorization, triangular and transpose solves, basis
+factorization abstractions, numerical diagnostics, matrix scaling utilities,
+and numerical stability monitoring.
+"""
+
+from optiforge.numerics.basis import BasisFactorization
+from optiforge.numerics.incremental_basis import EtaUpdate, IncrementalBasisFactorization
+from optiforge.numerics.pivot_basis import (
+    EtaMatrixUpdate,
+    PivotUpdateFactorization,
+    RefactorizationReason,
+)
+from optiforge.numerics.diagnostics import NumericalDiagnostics, compute_diagnostics
+from optiforge.numerics.exceptions import (
+    NumericalSingularityError,
+    SingularBasisError,
+)
+from optiforge.numerics.lu import (
+    DenseLU,
+    back_substitution,
+    back_substitution_transpose,
+    dense_lu_factor,
+    forward_substitution,
+    forward_substitution_transpose,
+    lu_solve,
+    lu_solve_transpose,
+)
+from optiforge.numerics.numerical_monitor import (
+    NumericalEvent,
+    NumericalEventType,
+    NumericalSnapshot,
+    NumericalStabilityMonitor,
+    NumericalThresholds,
+    NumericalWarningLevel,
+)
+from optiforge.numerics.scaling import (
+    EquilibrationScaling,
+    MatrixMagnitudeDiagnostics,
+    ModelScalingResult,
+    RuizScalingResult,
+    compute_magnitude_diagnostics,
+    ruiz_equilibration,
+    scale_linear_system,
+    scale_model,
+    unscale_model_solution,
+    unscale_solution_vectors,
+)
+from optiforge.numerics.condition import (
+    ConditionComparison,
+    ConditionDiagnostics,
+    ConditionStatus,
+    compare_condition_estimators,
+    estimate_basis_condition,
+    estimate_condition_1norm,
+    estimate_inverse_1norm,
+)
+from optiforge.numerics.triangular_provider import (
+    PythonTriangularSolveProvider,
+    SciPyTriangularSolveProvider,
+    TriangularProviderConfig,
+    TriangularProviderType,
+    TriangularSolveProvider,
+    backward_solve,
+    forward_solve,
+    get_global_provider_config,
+    get_provider_stats,
+    get_triangular_provider,
+    is_scipy_available,
+    reset_provider_stats,
+    set_global_provider_config,
+    triangular_lu_solve,
+    triangular_lu_solve_transpose,
+    triangular_solve,
+)
+from optiforge.numerics.lu_provider import (
+    LUFactorizationProvider,
+    LUProviderConfig,
+    LUProviderType,
+    PythonLUFactorizationProvider,
+    SciPyLUFactorizationProvider,
+    get_global_lu_provider_config,
+    get_lu_provider,
+    get_lu_provider_stats,
+    reset_lu_provider_stats,
+    set_global_lu_provider_config,
+)
+from optiforge.numerics.policy import NumericalPolicy, VerificationMode
+from optiforge.numerics.basis_quality import BasisQuality, evaluate_basis_quality
+from optiforge.numerics.verification import SolverDiagnostics, verify_solution
+
+__all__ = [
+    "NumericalPolicy",
+    "VerificationMode",
+    "BasisQuality",
+    "evaluate_basis_quality",
+    "SolverDiagnostics",
+    "verify_solution",
+    "BasisFactorization",
+    "IncrementalBasisFactorization",
+    "EtaUpdate",
+    "PivotUpdateFactorization",
+    "RefactorizationReason",
+    "EtaMatrixUpdate",
+    "DenseLU",
+    "dense_lu_factor",
+    "forward_substitution",
+    "back_substitution",
+    "forward_substitution_transpose",
+    "back_substitution_transpose",
+    "lu_solve",
+    "lu_solve_transpose",
+    "is_scipy_available",
+    "forward_solve",
+    "backward_solve",
+    "triangular_lu_solve",
+    "triangular_lu_solve_transpose",
+    "triangular_solve",
+    "TriangularProviderType",
+    "TriangularSolveProvider",
+    "PythonTriangularSolveProvider",
+    "SciPyTriangularSolveProvider",
+    "TriangularProviderConfig",
+    "get_global_provider_config",
+    "set_global_provider_config",
+    "get_triangular_provider",
+    "get_provider_stats",
+    "reset_provider_stats",
+    "LUProviderType",
+    "LUFactorizationProvider",
+    "PythonLUFactorizationProvider",
+    "SciPyLUFactorizationProvider",
+    "LUProviderConfig",
+    "get_global_lu_provider_config",
+    "set_global_lu_provider_config",
+    "get_lu_provider",
+    "get_lu_provider_stats",
+    "reset_lu_provider_stats",
+    "NumericalDiagnostics",
+    "compute_diagnostics",
+    "NumericalSingularityError",
+    "SingularBasisError",
+    "EquilibrationScaling",
+    "MatrixMagnitudeDiagnostics",
+    "compute_magnitude_diagnostics",
+    "RuizScalingResult",
+    "ModelScalingResult",
+    "ruiz_equilibration",
+    "scale_linear_system",
+    "unscale_solution_vectors",
+    "scale_model",
+    "unscale_model_solution",
+    "ConditionStatus",
+    "ConditionDiagnostics",
+    "ConditionComparison",
+    "estimate_inverse_1norm",
+    "estimate_condition_1norm",
+    "estimate_basis_condition",
+    "compare_condition_estimators",
+    "NumericalEvent",
+    "NumericalEventType",
+    "NumericalSnapshot",
+    "NumericalStabilityMonitor",
+    "NumericalThresholds",
+    "NumericalWarningLevel",
+]
+

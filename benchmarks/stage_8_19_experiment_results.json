@@ -1,0 +1,92 @@
+[
+  {
+    "workload": "scale_lp_m6",
+    "is_milp": false,
+    "baseline_pfi_ms": 4.44,
+    "optimized_pfi_ms": 4.03,
+    "incremental_ms": 3.90,
+    "speedup_percentage": 9.20,
+    "ratio_inc_to_opt": 0.968,
+    "numerical_match": true
+  },
+  {
+    "workload": "scale_lp_m50",
+    "is_milp": false,
+    "baseline_pfi_ms": 83.26,
+    "optimized_pfi_ms": 72.83,
+    "incremental_ms": 71.91,
+    "speedup_percentage": 12.53,
+    "ratio_inc_to_opt": 0.987,
+    "numerical_match": true
+  },
+  {
+    "workload": "scale_lp_m100",
+    "is_milp": false,
+    "baseline_pfi_ms": 227.40,
+    "optimized_pfi_ms": 227.85,
+    "incremental_ms": 583.37,
+    "speedup_percentage": -0.20,
+    "ratio_inc_to_opt": 2.560,
+    "numerical_match": true
+  },
+  {
+    "workload": "scale_lp_m200",
+    "is_milp": false,
+    "baseline_pfi_ms": 2719.13,
+    "optimized_pfi_ms": 2305.97,
+    "incremental_ms": 2337.12,
+    "speedup_percentage": 15.19,
+    "ratio_inc_to_opt": 1.014,
+    "numerical_match": true
+  },
+  {
+    "workload": "scale_lp_m500",
+    "is_milp": false,
+    "baseline_pfi_ms": 14922.88,
+    "optimized_pfi_ms": 34659.21,
+    "incremental_ms": 37717.93,
+    "speedup_percentage": -132.26,
+    "ratio_inc_to_opt": 1.088,
+    "numerical_match": true
+  },
+  {
+    "workload": "phase1_heavy_lp",
+    "is_milp": false,
+    "baseline_pfi_ms": 64.15,
+    "optimized_pfi_ms": 71.86,
+    "incremental_ms": 57.44,
+    "speedup_percentage": -12.02,
+    "ratio_inc_to_opt": 0.799,
+    "numerical_match": true
+  },
+  {
+    "workload": "highly_sparse_lp",
+    "is_milp": false,
+    "baseline_pfi_ms": 26651.04,
+    "optimized_pfi_ms": 26398.21,
+    "incremental_ms": 26322.62,
+    "speedup_percentage": 0.95,
+    "ratio_inc_to_opt": 0.997,
+    "numerical_match": true
+  },
+  {
+    "workload": "branching_heavy",
+    "is_milp": true,
+    "baseline_pfi_ms": 167.93,
+    "optimized_pfi_ms": 156.80,
+    "incremental_ms": 149.36,
+    "speedup_percentage": 6.63,
+    "ratio_inc_to_opt": 0.953,
+    "numerical_match": true
+  },
+  {
+    "workload": "multilevel_bb",
+    "is_milp": true,
+    "baseline_pfi_ms": 18.11,
+    "optimized_pfi_ms": 18.85,
+    "incremental_ms": 27.00,
+    "speedup_percentage": -4.08,
+    "ratio_inc_to_opt": 1.432,
+    "numerical_match": true
+  }
+]
